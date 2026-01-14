@@ -1,0 +1,1069 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #c8102e;
+    --primary-dark: #a00d24;
+    --secondary: #1e3a5f;
+    --accent: #d4af37;
+    --bg: #f5f7fa;
+    --card-bg: #ffffff;
+    --text: #1a1a2e;
+    --text-muted: #6b7280;
+    --border: #e5e7eb;
+    --success: #059669;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+}
+
+/* Header */
+.header {
+    background: var(--secondary);
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: white;
+}
+
+.nav-links {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    opacity: 0.9;
+    transition: opacity 0.2s;
+}
+
+.nav-links a:hover {
+    opacity: 1;
+}
+
+@media (max-width: 600px) {
+    .header {
+        padding: 1rem;
+    }
+    
+    .logo {
+        font-size: 1.2rem;
+    }
+    
+    .nav-links {
+        gap: 1rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, var(--secondary) 0%, #2d4a6f 100%);
+    padding: 3rem 2rem;
+    color: white;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Search Form */
+.search-section {
+    max-width: 1000px;
+    margin: -2rem auto 2rem;
+    padding: 0 1rem;
+}
+
+.search-card {
+    background: var(--card-bg);
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+}
+
+.trip-type {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.trip-type label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+}
+
+.search-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: end;
+}
+
+.search-grid > .form-group {
+    flex: 1;
+    min-width: 150px;
+}
+
+.search-grid > .form-group.date-group {
+    min-width: 180px;
+}
+
+.search-grid > .form-group.passengers-group {
+    min-width: 140px;
+    flex: 0.7;
+}
+
+.search-grid > button {
+    flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+    .search-grid {
+        flex-direction: column;
+    }
+    
+    .search-grid > .form-group,
+    .search-grid > .form-group.date-group,
+    .search-grid > .form-group.passengers-group {
+        width: 100%;
+        min-width: unset;
+    }
+    
+    .search-grid > button {
+        width: 100%;
+    }
+    
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+}
+
+.form-group input,
+.form-group select {
+    padding: 0.875rem 1rem;
+    border: 2px solid var(--border);
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+.search-options {
+    display: flex;
+    gap: 2rem;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.checkbox-label input {
+    width: 18px;
+    height: 18px;
+}
+
+/* Buttons */
+.btn {
+    padding: 0.875rem 2rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: var(--primary-dark);
+    transform: translateY(-1px);
+}
+
+.btn-secondary {
+    background: var(--secondary);
+    color: white;
+}
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid var(--primary);
+    color: var(--primary);
+}
+
+/* Results Section */
+.results-section {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 1rem 3rem;
+}
+
+.results-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.results-count {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+/* Flight Card */
+.flight-card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+    justify-content: space-between;
+    transition: box-shadow 0.2s;
+}
+
+.flight-card:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+.flight-time {
+    text-align: center;
+    min-width: 80px;
+}
+
+.flight-time .time {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.flight-time .airport {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+}
+
+.flight-time .city {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+.flight-price {
+    text-align: right;
+    min-width: 120px;
+}
+
+@media (max-width: 600px) {
+    .flight-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 1rem;
+    }
+    
+    .flight-time {
+        width: 100%;
+    }
+    
+    .flight-time .time {
+        font-size: 1.3rem;
+    }
+    
+    .flight-duration {
+        width: 100%;
+    }
+    
+    .flight-price {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+.flight-route {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-muted);
+}
+
+.route-line {
+    width: 100%;
+    height: 2px;
+    background: var(--border);
+    position: relative;
+    min-width: 50px;
+}
+
+.route-line::after {
+    content: '✈️';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--card-bg);
+    padding: 0 4px;
+    font-size: 14px;
+}
+
+.flight-duration {
+    text-align: center;
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    min-width: 80px;
+    padding: 0 10px;
+}
+
+.flight-duration .route-line {
+    width: 60px;
+    margin: 4px 0;
+}
+
+.flight-price {
+    text-align: right;
+}
+
+.price {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.per-person {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+/* Booking Modal */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 1rem;
+}
+
+.modal {
+    background: var(--card-bg);
+    border-radius: 16px;
+    max-width: 500px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.modal-header {
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-header h2 {
+    font-size: 1.25rem;
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-muted);
+}
+
+.modal-body {
+    padding: 1.5rem;
+}
+
+/* Miles&Smiles Section */
+.miles-section {
+    background: linear-gradient(135deg, #1e3a5f 0%, #2d4a6f 100%);
+    color: white;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+}
+
+.miles-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.miles-logo {
+    font-weight: 600;
+}
+
+.miles-signin {
+    background: transparent;
+    border: 1px solid white;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.875rem;
+}
+
+.miles-signin:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Passenger Form */
+.passenger-form h3 {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.gender-options {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.gender-options label {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+/* Alerts */
+.alert {
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.alert-error {
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    color: #dc2626;
+}
+
+.alert-success {
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    color: #166534;
+}
+
+/* Loading */
+.loading {
+    text-align: center;
+    padding: 3rem;
+    color: var(--text-muted);
+}
+
+/* Booking Success */
+.booking-success {
+    text-align: center;
+    padding: 2rem;
+}
+
+.booking-success .icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.booking-reference {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary);
+    background: #fef2f2;
+    padding: 1rem;
+    border-radius: 8px;
+    margin: 1rem 0;
+}
+
+/* Empty State */
+.empty-state {
+    text-align: center;
+    padding: 4rem 2rem;
+    color: var(--text-muted);
+}
+
+.empty-state .icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+/* ============================================
+   MILES PAGE STYLES
+   ============================================ */
+
+.miles-page {
+    min-height: calc(100vh - 80px);
+    background: linear-gradient(135deg, #1e3a5f 0%, #c41e3a 100%);
+    padding: 3rem 1rem;
+}
+
+.miles-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.miles-page h1 {
+    color: white;
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.miles-subtitle {
+    color: rgba(255,255,255,0.8);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.profile-card, .auth-card {
+    background: white;
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+}
+
+.profile-avatar {
+    font-size: 5rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.profile-card h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #1e3a5f;
+}
+
+.member-number-box {
+    background: #f8fafc;
+    padding: 1rem;
+    border-radius: 12px;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    border: 2px solid #e2e8f0;
+}
+
+.member-number-box .label {
+    display: block;
+    font-size: 0.75rem;
+    color: #64748b;
+    margin-bottom: 0.25rem;
+}
+
+.member-number-box .value {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #c41e3a;
+}
+
+.stats-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.stat-box {
+    padding: 1rem;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.stat-box.points {
+    background: #fef3c7;
+}
+
+.stat-box.tier {
+    background: #dbeafe;
+}
+
+.stat-box .label {
+    display: block;
+    font-size: 0.75rem;
+    color: #64748b;
+}
+
+.stat-box.points .value {
+    display: block;
+    font-size: 1.75rem;
+    font-weight: bold;
+    color: #d97706;
+}
+
+.stat-box.tier .value {
+    display: block;
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #2563eb;
+}
+
+.profile-card .email {
+    text-align: center;
+    color: #64748b;
+    margin-bottom: 1.5rem;
+}
+
+.profile-actions {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.profile-actions .btn {
+    flex: 1;
+}
+
+.btn-danger {
+    background: #dc2626 !important;
+    color: white !important;
+}
+
+.points-info {
+    background: #f0fdf4;
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid #bbf7d0;
+}
+
+.points-info h3 {
+    color: #166534;
+    margin-bottom: 0.75rem;
+}
+
+.points-info ul {
+    list-style: none;
+    padding: 0;
+}
+
+.points-info li {
+    padding: 0.5rem 0;
+    color: #166534;
+    border-bottom: 1px solid #bbf7d0;
+}
+
+.points-info li:last-child {
+    border-bottom: none;
+}
+
+/* Auth Card */
+.auth-tabs {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.auth-tabs .tab {
+    flex: 1;
+    padding: 0.75rem;
+    border: 2px solid #e2e8f0;
+    background: white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.2s;
+}
+
+.auth-tabs .tab.active {
+    background: #c41e3a;
+    color: white;
+    border-color: #c41e3a;
+}
+
+.btn-full {
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.benefits {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #e2e8f0;
+}
+
+.benefits h3 {
+    color: #1e3a5f;
+    margin-bottom: 1rem;
+}
+
+.benefits ul {
+    list-style: none;
+    padding: 0;
+}
+
+.benefits li {
+    padding: 0.5rem 0;
+    color: #475569;
+}
+
+/* Header Links */
+.header a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.header .logo {
+    text-decoration: none;
+    color: #1e3a5f;
+    font-weight: bold;
+    font-size: 1.25rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #475569;
+    transition: color 0.2s;
+}
+
+.nav-links a:hover {
+    color: #c41e3a;
+}
+
+.city {
+    font-size: 0.75rem;
+    color: #64748b;
+}
+
+/* ============================================
+   MODERN DASHBOARD STYLES (NEW)
+   ============================================ */
+
+.miles-dashboard-wrapper {
+    min-height: 100vh;
+    background: #f3f4f6;
+    padding-bottom: 2rem;
+}
+
+.miles-hero-bg {
+    background: linear-gradient(135deg, #1e3a5f 0%, #0f172a 100%);
+    height: 250px;
+    padding: 2rem;
+    color: white;
+    text-align: center;
+    border-radius: 0 0 30px 30px;
+    margin-bottom: -100px;
+}
+
+.miles-dashboard-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    gap: 2rem;
+    position: relative;
+    z-index: 10;
+}
+
+@media (max-width: 900px) {
+    .miles-dashboard-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Membership Card (Credit Card Style) */
+.membership-card-visual {
+    background: linear-gradient(135deg, #000000 0%, #1e3a5f 100%);
+    border-radius: 20px;
+    padding: 1.5rem;
+    color: white;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+    margin-bottom: 2rem;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.membership-card-visual::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 200px;
+    height: 200px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 50%;
+}
+
+.card-logo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.card-chip {
+    width: 50px;
+    height: 35px;
+    background: linear-gradient(135deg, #e2e8f0 0%, #94a3b8 100%);
+    border-radius: 6px;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.card-number {
+    font-family: 'Courier New', monospace;
+    font-size: 1.4rem;
+    letter-spacing: 2px;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+}
+
+.card-details {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    opacity: 0.7;
+    margin-bottom: 4px;
+}
+
+.card-value {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+/* Sidebar Styles */
+.dashboard-sidebar {
+    gap: 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-card {
+    background: white;
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.sidebar-menu {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar-menu li {
+    margin-bottom: 0.5rem;
+}
+
+.sidebar-menu button {
+    width: 100%;
+    text-align: left;
+    padding: 10px 15px;
+    background: transparent;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #4b5563;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.sidebar-menu button:hover {
+    background: #f3f4f6;
+    color: #1e3a5f;
+}
+
+.sidebar-menu button.danger {
+    color: #ef4444;
+}
+
+.sidebar-menu button.danger:hover {
+    background: #fef2f2;
+}
+
+/* Main Content Area */
+.dashboard-main {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.stats-grid-modern {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.stat-card-modern {
+    background: white;
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.stat-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+.stat-icon.gold { background: #fef9c3; color: #ca8a04; }
+.stat-icon.blue { background: #dbeafe; color: #2563eb; }
+.stat-icon.green { background: #dcfce7; color: #16a34a; }
+
+.stat-info .value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1f2937;
+    display: block;
+}
+
+.stat-info .label {
+    font-size: 0.875rem;
+    color: #6b7280;
+}
+
+/* Recent Activity / Bookings */
+.content-card {
+    background: white;
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    min-height: 400px;
+}
+
+.content-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.content-header h3 {
+    font-size: 1.25rem;
+    color: #1f2937;
+    margin: 0;
+}
+
+.booking-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    transition: all 0.2s;
+}
+
+.booking-item:hover {
+    border-color: #3b82f6;
+    background: #f8fafc;
+}
+
+.booking-route {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.booking-code {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1f2937;
+}
+
+.booking-status {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.status-confirmed { background: #dcfce7; color: #166534; }
+.status-completed { background: #f3f4f6; color: #4b5563; }
+
+.booking-meta {
+    text-align: right;
+    font-size: 0.875rem;
+    color: #6b7280;
+}
+

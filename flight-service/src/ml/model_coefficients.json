@@ -1,0 +1,48 @@
+{
+  "model": "randomforest-v3",
+  "trained_on": "kaggle-flight-price-prediction",
+  "dataset_url": "https://www.kaggle.com/datasets/shubhambathwal/flight-price-prediction",
+  "training_date": "2026-01-12T16:44:11.556573",
+  "training_samples": 300153,
+  "confidence": 0.7,
+  "metrics": {
+    "RandomForest": {
+      "mae": 205.2485,
+      "rmse": 244.1477,
+      "r2": 0.197
+    },
+    "GradientBoosting": {
+      "mae": 212.0488,
+      "rmse": 249.0212,
+      "r2": 0.1646
+    },
+    "LinearRegression": {
+      "mae": 229.298,
+      "rmse": 264.0103,
+      "r2": 0.061
+    }
+  },
+  "features": [
+    "duration_minutes",
+    "departure_hour",
+    "day_of_week",
+    "month",
+    "days_advance",
+    "is_direct",
+    "is_international",
+    "is_weekend",
+    "is_peak_hour",
+    "is_busy_month",
+    "is_major_hub",
+    "distance_km"
+  ],
+  "coefficients": {
+    "basePrice": 60.0,
+    "durationCoef": 56.96269022826213,
+    "peakHourCoef": 11.094489938332687,
+    "weekendCoef": 3.8749544966374656,
+    "directFlightPremium": 0.05144982996850173,
+    "internationalMultiplier": 1.0,
+    "busyMonthMultiplier": 1.001025532909407
+  }
+}

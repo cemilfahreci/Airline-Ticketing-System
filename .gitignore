@@ -1,0 +1,52 @@
+# Dependencies
+node_modules/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Build outputs
+dist/
+build/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Docker images (must not be committed per spec)
+*.tar
+*.tar.gz
+
+# Python ML artifacts
+__pycache__/
+*.py[cod]
+*.pkl
+*.joblib
+.ipynb_checkpoints/
+
+# Test coverage
+coverage/
+
+# Large Kaggle dataset files (download separately)
+flight-service/src/ml/*.csv
+*.csv
+
+# Temporary auth tokens
+token.json
+admin_token.json
+
+# Kaggle zip files
+*.zip
